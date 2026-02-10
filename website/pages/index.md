@@ -304,23 +304,23 @@ footer:
 
   openingHoursInsteadText: ""
   openingHours: 
-    - "Monday - Thursday & Sunday:"
+    - "Monday ～ Thursday & Sunday"
     - "11:00 AM - 11:00 PM"
-    - "Friday - Saturday:"
+    - "Friday ～ Saturday"
     - "11:00 AM - 11:00 PM"
  
-  addressInsteadText: ""
+  addressInsteadText: "Address"
   address: 
     - address: "1610 E Capitol Expy, San Jose, CA 95121"
       url: "https://maps.app.goo.gl/bcwFsXPMDHKjP9yY7"
     # - address: "address2"
     #   url: "https://..."
  
-  menu:
-    - { text: "Home", link: "/" }
-    - { text: "Gallery", link: "#gallery" }
-    - { text: "About Us", link: "/#about-us" }
-    - { text: "Contact Us", link: "/#contact-us" }
+  # menu:
+  #   - { text: "Home", link: "/" }
+  #   - { text: "Gallery", link: "#gallery" }
+  #   - { text: "About Us", link: "/#about-us" }
+  #   - { text: "Contact Us", link: "/#contact-us" }
 
 
   FB: false
@@ -511,5 +511,5 @@ seo:
 #     #   price: "0"
 #     #   image: ""
       
-# ---
-# <!-- Powered by Best Food Today -->
+---
+<!-- Powered by Best Food Today -->
