@@ -129,7 +129,7 @@ sections:
     description: 
       - "Fresh From Our Kitchen"
     descriptionColor: "#333333"
-    folderPath: "gallery3"
+    folderPath: "gallery4"
     showImgName: false # true | false
     imgNameColor: "#000000"
     menuItemImgRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
