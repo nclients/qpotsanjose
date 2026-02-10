@@ -40,9 +40,9 @@ header:
   menu:
     - { text: "Home", link: "/" }
     - { text: "Menu", link: "/menu" }
-    - { text: "Gallery", link: "#gallery" }
-    - { text: "About Us", link: "#about-us" }
-    - { text: "Contact Us", link: "#contact-us" }
+    - { text: "Gallery", link: "/#gallery" }
+    - { text: "About Us", link: "/#about-us" }
+    - { text: "Contact Us", link: "/#contact-us" }
 
   addOrderOnlineBtn: false
   orderOnlineBtnInsteadText: ""
@@ -104,69 +104,69 @@ sections:
     bottomRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
     # bottomInfo: "We offer Takeout"
 
-# Video
-  - type: "video"
-    id: ""
-    title: 
-      - "AYCE Premium Korean BBQ & Hot Pot"
-    description: 
-      - "The Ultimate All-in-One Dining Experience" 
-    videoType: "gjw" # vimeo | gjw | youtube
-    videoId: 
-      - "1iae6in3vch3QLZvE6g4Chfyj1151c"
-    isOnlyDisplayOnMobile: false
+# # Video
+#   - type: "video"
+#     id: ""
+#     title: 
+#       - "AYCE Premium Korean BBQ & Hot Pot"
+#     description: 
+#       - "The Ultimate All-in-One Dining Experience" 
+#     videoType: "gjw" # vimeo | gjw | youtube
+#     videoId: 
+#       - "1iae6in3vch3QLZvE6g4Chfyj1151c"
+#     isOnlyDisplayOnMobile: false
 
 # Gallery  
   - type: "gallery"
-    id: "gallery"
-    mode: 4 # 1 - 3
+    id: "menu"
+    mode: 1 # 1 - 3
     bgImg: ""
     bgColor: ""
     bgOpacity: "" # 0~1
     title: 
-      - "Food at Q Pot Korean BBQ & Hot Pot"
+      - "Menu"
     titleColor: "#000000"
     description: 
-      - ""
+      - "Fresh From Our Kitchen"
     descriptionColor: "#333333"
-    folderPath: "gallery"
+    folderPath: "gallery3"
     showImgName: false # true | false
     imgNameColor: "#000000"
     menuItemImgRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
 
-# textBlock - only title
-  - type: "textBlock" 
-    id: "about-us"
-    bgImg: ""
-    bgColor: ""
-    bgOpacity: "" # 0~1
-    title: 
-      - "About Us"
-    titleColor: "#000000"
-    description: 
+# # textBlock - only title
+#   - type: "textBlock" 
+#     id: "about-us"
+#     bgImg: ""
+#     bgColor: ""
+#     bgOpacity: "" # 0~1
+#     title: 
+#       - "About Us"
+#     titleColor: "#000000"
+#     description: 
       
-      - "We want to share our love of food by bringing a unique experience in Korean BBQ and Hot Pot. With fresh ingredients and great quality produce, we bring to you a flavorful combination of grilled dishes and hot pots."
-      - "At Q-pot, we want every visit to be a pleasant and memorable experience. Customer service is our top priority, and we are committed to making every guest feel welcomed and well taken care of."
-      - "Our team strives to create a warm and inviting atmosphere where you can relax and enjoy our All You Can Eat menu. We are passionate about introducing a new and unique dining experience to all of our new customers."
-    descriptionColor: ""
+#       - "We want to share our love of food by bringing a unique experience in Korean BBQ and Hot Pot. With fresh ingredients and great quality produce, we bring to you a flavorful combination of grilled dishes and hot pots."
+#       - "At Q-pot, we want every visit to be a pleasant and memorable experience. Customer service is our top priority, and we are committed to making every guest feel welcomed and well taken care of."
+#       - "Our team strives to create a warm and inviting atmosphere where you can relax and enjoy our All You Can Eat menu. We are passionate about introducing a new and unique dining experience to all of our new customers."
+#     descriptionColor: ""
 
-# Gallery  
-  - type: "gallery"
-    id: ""
-    mode: 4 # 1 - 3
-    bgImg: ""
-    bgColor: ""
-    bgOpacity: "" # 0~1
-    title: 
-      - "Our Dining Environment"
-    titleColor: "#000000"
-    description: 
-      - ""
-    descriptionColor: "#333333"
-    folderPath: "gallery2"
-    showImgName: false # true | false
-    imgNameColor: "#000000"
-    menuItemImgRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
+# # Gallery  
+#   - type: "gallery"
+#     id: ""
+#     mode: 4 # 1 - 3
+#     bgImg: ""
+#     bgColor: ""
+#     bgOpacity: "" # 0~1
+#     title: 
+#       - "Our Dining Environment"
+#     titleColor: "#000000"
+#     description: 
+#       - ""
+#     descriptionColor: "#333333"
+#     folderPath: "gallery2"
+#     showImgName: false # true | false
+#     imgNameColor: "#000000"
+#     menuItemImgRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
 
 # # feature - imgWithText
 #   - type: "feature" 
@@ -261,19 +261,19 @@ sections:
 #       - "Online ordering NOW enabled for pick-up. Just tell us what you want and we'll prepare it as fast as we can. All orders are manually confirmed by us directly. Find out in real-time when your food is ready. All orders are manually confirmed by us in real-time. Watch on-screen when your food is ready for pickup."
 #     descriptionColor: "#ffffff"
   
-# map  
-  - type: "map"
-    noMarginTop: false
-    id: "contact-us"
-    mode: "fullWidth" # full-width | ...
-    url: "https://maps.app.goo.gl/bcwFsXPMDHKjP9yY7"
-    iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.5496657845288!2d-121.81461662435163!3d37.305805572107346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e32801309e837%3A0xa4283b7a6d090e5f!2sQ%20Pot%20Korean%20BBQ%20%26%20Hotpot!5e0!3m2!1sen!2sus!4v1770696768961!5m2!1sen!2sus"
-    addTelBtn: true
-    tel: "（669）235-9511"
-    telInsteadText: ""
-    tel2: "" # if there are two phone numbers
-    tel2InsteadText: ""
-    getDirectionBtnInsteadText: ""
+# # map  
+#   - type: "map"
+#     noMarginTop: false
+#     id: "contact-us"
+#     mode: "fullWidth" # full-width | ...
+#     url: "https://maps.app.goo.gl/bcwFsXPMDHKjP9yY7"
+#     iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.5496657845288!2d-121.81461662435163!3d37.305805572107346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e32801309e837%3A0xa4283b7a6d090e5f!2sQ%20Pot%20Korean%20BBQ%20%26%20Hotpot!5e0!3m2!1sen!2sus!4v1770696768961!5m2!1sen!2sus"
+#     addTelBtn: true
+#     tel: "（669）235-9511"
+#     telInsteadText: ""
+#     tel2: "" # if there are two phone numbers
+#     tel2InsteadText: ""
+#     getDirectionBtnInsteadText: ""
  
 #  # The modal will only appear once within 30 minutes."
 #   - type: "modal" 
@@ -294,7 +294,7 @@ sections:
 
 footer:
   mode: 1 # 1
-  noMarginTop: true
+  noMarginTop: false
   bgImg: "banner.webp"
   bgColor: "#000000"
   bgOpacity: "0.7" # 0~1
@@ -352,6 +352,8 @@ seo:
     
   locale: "en_US" # zh_TW | zh_CN | ja_JP
 
+
 # Do not change the content below
 layout: ../../theme/theme/layouts/main.astro
 ---
+
