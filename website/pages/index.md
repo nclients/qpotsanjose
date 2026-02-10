@@ -307,7 +307,7 @@ footer:
     - "Monday - Thursday & Sunday:"
     - "11:00 AM - 11:00 PM"
     - "Friday - Saturday:"
-    - "11:00 AM - 2:30 PM, 5:00 PM - 8:30 PM"
+    - "11:00 AM - 11:00 PM"
  
   addressInsteadText: ""
   address: 
