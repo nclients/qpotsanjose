@@ -60,7 +60,7 @@ sections:
 # hero
   - type: "hero" 
     id: ""
-    height: "100" # Conditionally use only when sectionType is imgBg
+    height: "70" # Conditionally use only when sectionType is imgBg
     sectionType: "imgBg" # video | imgWithText | imgBg
     bgVideoType: "gjw" # youtube | vimeo | gjw
     bgVideoId: "1gov6sj92av4Zb9OI9K1kKJat1rv1c"
@@ -300,16 +300,16 @@ footer:
   bgOpacity: "0.7" # 0~1
   textColor: "#FFFFFF" # default white
 
-  isLogo: true
-  logoSize: 60
-  logoSizeOnMobile: 35
+  # isLogo: true
+  # logoSize: 60
+  # logoSizeOnMobile: 35
 
   openingHoursInsteadText: ""
   openingHours: 
-    - "Monday ～ Thursday & Sunday"
+    - "Monday ～ Sunday"
     - "11:00 AM - 11:00 PM"
-    - "Friday ～ Saturday"
-    - "11:00 AM - 11:00 PM"
+    # - "Friday ～ Saturday"
+    # - "11:00 AM - 11:00 PM"
  
   addressInsteadText: "Address"
   address: 
