@@ -348,7 +348,7 @@ seo:
 
   metaDescription: "Q-Pot Korean BBQ & Hot Pot in San Jose offers an all-you-can-eat Korean BBQ and hot pot experience. Enjoy premium meats, fresh seafood, flavorful broths, and a modern dining atmosphere—perfect for groups and family gatherings."
 
-  # canonicalHref: "https://crabbynewark.com/" # https://example.com/
+  canonicalHref: "https://crabbynewark.com/" # https://example.com/
     
   locale: "en_US" # zh_TW | zh_CN | ja_JP
 
