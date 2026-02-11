@@ -1,6 +1,6 @@
 ---
 
-tag: "GTM-PG5QM8B4" #GTM-xxx
+tag: "" #GTM-xxx
 googleSiteVerification: "" 
 title: "Q-POT Korean BBQ & Hot Pot"
 favicon: "favicon.ico"
