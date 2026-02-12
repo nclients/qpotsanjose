@@ -58,7 +58,7 @@ header:
 
 sections:
 # hero
-  - type: "hero" 
+  - type: "hero"
     id: ""
     height: "70" # Conditionally use only when sectionType is imgBg
     sectionType: "imgBg" # video | imgWithText | imgBg
@@ -68,7 +68,7 @@ sections:
     mobileBgImg: ""
 
     bgColor: "#000000"
-    bgOpacity: "0.2" # 0~1
+    bgOpacity: "0.45" # 0~1
     title: 
       - "Q-POT"
       - "KOREAN BBQ & HOT POT"
@@ -78,6 +78,7 @@ sections:
   
     descriptionColor: "#ffffff"
     isTextAlignCenter: true
+    mobileTextMoveDown: true
     # title2: 
     #   - ""
     # title2Color: "#ffffff"
@@ -297,7 +298,7 @@ footer:
   noMarginTop: false
   bgImg: "banner.webp"
   bgColor: "#000000"
-  bgOpacity: "0.7" # 0~1
+  bgOpacity: "0.8" # 0~1
   textColor: "#FFFFFF" # default white
 
   # isLogo: true
@@ -356,4 +357,3 @@ seo:
 # Do not change the content below
 layout: ../../theme/theme/layouts/main.astro
 ---
-

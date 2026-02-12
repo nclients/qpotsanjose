@@ -68,7 +68,7 @@ sections:
     mobileBgImg: ""
 
     bgColor: "#000000"
-    bgOpacity: "0.2" # 0~1
+    bgOpacity: "0.45" # 0~1
     title: 
       - "Q-POT"
       - "KOREAN BBQ & HOT POT"
@@ -119,7 +119,7 @@ sections:
 # Gallery  
   - type: "gallery"
     id: "gallery"
-    mode: 4 # 1 - 3
+    mode: 5 # 1 - 5
     bgImg: ""
     bgColor: ""
     bgOpacity: "" # 0~1
@@ -150,10 +150,60 @@ sections:
       - "Our team strives to create a warm and inviting atmosphere where you can relax and enjoy our All You Can Eat menu. We are passionate about introducing a new and unique dining experience to all of our new customers."
     descriptionColor: ""
 
+# Reviews
+  - type: "reviews"
+    id: "reviews"
+    bgColor: "#ffffff"
+    title:
+      - "Top Google Review"
+    description:
+      - "What guests love most about Q-POT"
+    items:
+      - author:
+          handle: "google-review"
+          imageUrl: ""
+          name: "Google Guest A"
+        rating:
+          maxStars: 5
+          rating: 5
+        body: "Excellent food quality, fresh ingredients, and friendly service. Great place for Korean BBQ and hot pot with family and friends."
+      - author:
+          handle: "google-review"
+          imageUrl: ""
+          name: "Google Guest B"
+        rating:
+          maxStars: 5
+          rating: 5
+        body: "Large selection of meats, seafood, and vegetables. Broth flavors are rich and the dining area is clean and comfortable."
+      - author:
+          handle: "google-review"
+          imageUrl: ""
+          name: "Google Guest C"
+        rating:
+          maxStars: 5
+          rating: 5
+        body: "Perfect for groups. The staff explained everything clearly and kept checking in, which made the whole experience smooth and enjoyable."
+      - author:
+          handle: "google-review"
+          imageUrl: ""
+          name: "Google Guest D"
+        rating:
+          maxStars: 5
+          rating: 5
+        body: "Fresh ingredients and great value for all-you-can-eat. We loved both the BBQ grill and hot pot options."
+      - author:
+          handle: "google-review"
+          imageUrl: ""
+          name: "Google Guest E"
+        rating:
+          maxStars: 5
+          rating: 5
+        body: "One of the best AYCE spots in San Jose. Ingredients are fresh, service is quick, and the overall dining experience is excellent."
+
 # Gallery  
   - type: "gallery"
     id: ""
-    mode: 4 # 1 - 3
+    mode: 5 # 1 - 5
     bgImg: ""
     bgColor: ""
     bgOpacity: "" # 0~1
@@ -297,10 +347,10 @@ footer:
   noMarginTop: true
   bgImg: "banner.webp"
   bgColor: "#000000"
-  bgOpacity: "0.7" # 0~1
+  bgOpacity: "0.8" # 0~1
   textColor: "#FFFFFF" # default white
 
-  isLogo: true
+  isLogo: false
   logoSize: 60
   logoSizeOnMobile: 35
 
@@ -344,13 +394,42 @@ footer:
   paymentMethod: "applePay,visa,amex,alipay,mastercard" # alipay,applePay,cash,discover,googlePay,jcb,maestro,mastercard,stripe,unionPay,visa,weChatPay,payPal
 
 seo:
-  metaTitle: "Q-Pot Korean BBQ & Hot Pot San Jose | All You Can Eat BBQ & Hot Pot" 
-
-  metaDescription: "Q-Pot Korean BBQ & Hot Pot in San Jose offers an all-you-can-eat Korean BBQ and hot pot experience. Enjoy premium meats, fresh seafood, flavorful broths, and a modern dining atmosphere—perfect for groups and family gatherings."
-
+  metaTitle: "Q-POT Korean BBQ & Hot Pot in San Jose | AYCE Dining"
+  metaDescription: "Enjoy all-you-can-eat Korean BBQ and hot pot at Q-POT in San Jose. Premium meats, fresh seafood, rich broths, and a modern dine-in experience for families and groups."
+  keywords: "Q-POT, Q Pot San Jose, Korean BBQ San Jose, Hot Pot San Jose, AYCE Korean BBQ, all you can eat hot pot, Korean barbecue near me, San Jose restaurants"
   canonicalHref: "https://www.qpotsanjose.com/" # https://example.com/
-    
+  thisPageUrl: "https://www.qpotsanjose.com/"
+  img: "https://www.qpotsanjose.com/banner.webp"
   locale: "en_US" # zh_TW | zh_CN | ja_JP
+
+  # Structured data
+  name: "Q-POT Korean BBQ & Hot Pot"
+  images:
+    - "https://www.qpotsanjose.com/banner.webp"
+    - "https://www.qpotsanjose.com/logo.png"
+  address:
+    streetAddress: "1610 E Capitol Expy"
+    addressLocality: "San Jose"
+    addressRegion: "CA"
+    postalCode: "95121"
+    addressCountry: "US"
+  geo:
+    latitude: 37.3058056
+    longitude: -121.8120417
+  url: "https://www.qpotsanjose.com/"
+  telephone: "(669) 235-9511"
+  servesCuisine:
+    - "Korean BBQ"
+    - "Hot Pot"
+    - "Korean"
+  paymentAccepted: "Visa, Mastercard, American Express, Apple Pay, Alipay"
+  openingHours:
+    - dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"]
+      opens: "11:00"
+      closes: "23:00"
+    - dayOfWeek: ["Friday", "Saturday"]
+      opens: "11:00"
+      closes: "23:00"
 
 # Do not change the content below
 layout: ../../theme/theme/layouts/main.astro

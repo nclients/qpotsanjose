@@ -1,5 +1,5 @@
 ---
-layout: "ssg-theme-astro/layouts/main.astro"
+layout: "../../../theme/theme/layouts/main.astro"
 tag: ""
 googleSiteVerification: "" 
 title: ""
