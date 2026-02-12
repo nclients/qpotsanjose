@@ -432,5 +432,5 @@ seo:
       closes: "23:00"
 
 # Do not change the content below
-layout: ../../theme/theme/layouts/main.astro
+layout: ../layouts/main.astro
 ---

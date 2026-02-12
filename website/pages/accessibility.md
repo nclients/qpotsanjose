@@ -123,5 +123,5 @@ seo:
   locale: "en_US" # zh_TW | zh_CN | ja_JP
 
 # Do not change the content below
-layout: ../../theme/theme/layouts/main.astro
+layout: ../layouts/main.astro
 ---

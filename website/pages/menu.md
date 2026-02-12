@@ -355,5 +355,5 @@ seo:
 
 
 # Do not change the content below
-layout: ../../theme/theme/layouts/main.astro
+layout: ../layouts/main.astro
 ---
