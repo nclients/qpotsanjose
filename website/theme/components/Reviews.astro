@@ -1,0 +1,227 @@
+---
+import { cn } from "../utils/cn";
+
+type TestimonialsData = {
+  author: { handle: string; imageUrl: string | null | undefined; name: string };
+  rating: { maxStars: number; rating: number };
+  body: string;
+};
+
+const { section } = Astro.props;
+const reviews: TestimonialsData[] = (section?.items || []).slice(0, 5);
+
+const getRandomColor = () => {
+  const colors = [
+    "bg-red-700",
+    "bg-blue-700",
+    "bg-green-700",
+    "bg-yellow-700",
+    "bg-purple-700",
+    "bg-pink-700",
+    "bg-orange-700",
+    "bg-teal-700",
+    "bg-indigo-700",
+    "bg-lime-700",
+    "bg-cyan-700",
+    "bg-amber-700",
+    "bg-rose-700",
+    "bg-fuchsia-700",
+    "bg-emerald-700",
+    "bg-sky-700",
+    "bg-violet-700",
+    "bg-stone-700",
+    "bg-gray-700",
+    "bg-zinc-700",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
+const getInitial = (name: string) => {
+  return name ? name.charAt(0).toUpperCase() : "?";
+};
+---
+
+<section
+  id={`${section?.id || ""}`}
+  class={cn(section?.noMarginTop ? "pt-0" : "pt-16 sm:pt-24 md:pt-32")}
+>
+  <div style={`background-color:${section?.bgColor}`}>
+    <div class="mx-auto max-w-7xl px-2 lg:px-8">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl text-center">
+          {section?.title?.map((line: string, index: number) => (
+            <Fragment key={index}>
+              <span class="block leading-16">{line}</span>
+            </Fragment>
+          ))}
+        </h2>
+
+        {section?.description?.map((info: string, index: number) => (
+          <Fragment key={index}>
+            <p class="mt-4 text-lg leading-8 text-gray-600 text-center">{info}</p>
+          </Fragment>
+        ))}
+      </div>
+
+      <div
+        class="mx-auto mt-8 max-w-6xl px-2 lg:px-8"
+        data-reviews-carousel
+        data-autoplay-interval="4500"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5" data-reviews-track>
+          {reviews.map((testimonial: TestimonialsData) => (
+            <figure class="rounded-2xl bg-gray-50 p-4 sm:p-6 text-base min-h-[220px]" data-review-slide>
+              {testimonial?.body && (
+                <blockquote class="text-gray-900 text-center md:text-left">
+                  <p>"{testimonial?.body}"</p>
+                </blockquote>
+              )}
+
+              <div class="mt-6 flex items-center justify-center md:justify-start gap-x-3">
+                <div class={`size-9 rounded-full flex items-center justify-center ${getRandomColor()}`}>
+                  <span class="text-white text-base font-bold">{getInitial(testimonial?.author?.name)}</span>
+                </div>
+
+                <div class="text-center md:text-left">
+                  {testimonial?.author?.name && (
+                    <div class="font-semibold text-gray-900 text-sm">{testimonial?.author?.name}</div>
+                  )}
+                  {testimonial?.rating?.rating && (
+                    <div
+                      role="img"
+                      aria-label={`${testimonial.rating.rating} out of ${testimonial.rating.maxStars || 5} stars`}
+                    >
+                      <div class="flex items-center justify-center md:justify-start mt-1">
+                        {Array.from({ length: testimonial?.rating?.maxStars || 5 }, (_, index) => (
+                          <svg
+                            class={cn(
+                              index < testimonial.rating.rating ? "text-yellow-400" : "text-gray-300",
+                              "size-4 shrink-0"
+                            )}
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </figure>
+          ))}
+        </div>
+
+        <div class="mt-5 flex items-center justify-center gap-2" data-review-dots>
+          {reviews.map((_, index) => (
+            <button
+              type="button"
+              class={`h-2.5 w-2.5 rounded-full transition ${
+                index === 0 ? "bg-gray-900" : "bg-gray-300 hover:bg-gray-500"
+              }`}
+              data-review-dot
+              data-review-dot-index={index}
+              aria-label={`Go to review ${index + 1}`}
+            >
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {section?.navHref ? (
+    <div class="text-center mt-6">
+      <a
+        href={section?.navHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block rounded-md px-4 py-2 text-sm font-semibold text-white"
+        style="background-color:#1f2937;"
+      >
+        {section?.navText || "導航"}
+      </a>
+    </div>
+  ) : (
+    ""
+  )}
+</section>
+
+<script>
+  const reviewCarousels = document.querySelectorAll("[data-reviews-carousel]");
+
+  reviewCarousels.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll("[data-review-slide]"));
+    const dots = Array.from(carousel.querySelectorAll("[data-review-dot]"));
+    const intervalMs = Number(carousel.getAttribute("data-autoplay-interval")) || 4500;
+
+    if (slides.length === 0) return;
+
+    let activeIndex = 0;
+    let timer: number | null = null;
+
+    const getPerView = () => (window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
+
+    const isVisible = (index: number, start: number, perView: number, total: number) => {
+      for (let i = 0; i < perView; i += 1) {
+        if ((start + i) % total === index) return true;
+      }
+      return false;
+    };
+
+    const render = () => {
+      const perView = getPerView();
+      slides.forEach((slide, index) => {
+        if (isVisible(index, activeIndex, perView, slides.length)) {
+          slide.classList.remove("hidden");
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) {
+          dot.classList.add("bg-gray-900");
+          dot.classList.remove("bg-gray-300", "hover:bg-gray-500");
+        } else {
+          dot.classList.remove("bg-gray-900");
+          dot.classList.add("bg-gray-300", "hover:bg-gray-500");
+        }
+      });
+    };
+
+    const setActive = (nextIndex: number) => {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      render();
+    };
+
+    const step = () => setActive(activeIndex + 1);
+
+    const start = () => {
+      timer = window.setInterval(step, intervalMs);
+    };
+
+    const stop = () => {
+      if (timer !== null) window.clearInterval(timer);
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const index = Number(dot.getAttribute("data-review-dot-index")) || 0;
+        setActive(index);
+      });
+    });
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    window.addEventListener("resize", render);
+
+    render();
+    start();
+  });
+</script>
