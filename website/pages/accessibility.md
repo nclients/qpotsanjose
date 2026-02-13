@@ -67,10 +67,10 @@ footer:
   noMarginTop: true
   bgImg: "banner.webp"
   bgColor: "#000000"
-  bgOpacity: "0.7" # 0~1
+  bgOpacity: "0.8" # 0~1
   textColor: "#FFFFFF" # default white
 
-  isLogo: true
+  isLogo: false
   logoSize: 60
   logoSizeOnMobile: 35
 
@@ -123,5 +123,5 @@ seo:
   locale: "en_US" # zh_TW | zh_CN | ja_JP
 
 # Do not change the content below
-layout: ../../theme/theme/layouts/main.astro
+layout: ../layouts/main.astro
 ---

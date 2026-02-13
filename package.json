@@ -9,11 +9,12 @@
     "build": "astro check && npm run check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-sitemap": "node theme/theme/utils/generate-sitemap.js",
-    "generate-robots": "node theme/theme/utils/generate-robots.js"
+    "generate-sitemap": "node website/theme/utils/generate-sitemap.js",
+    "generate-robots": "node website/theme/utils/generate-robots.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
+    "@astrojs/mdx": "^3.1.3",
     "@astrojs/react": "^3.6.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -21,8 +22,5 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.5.3"
-  },
-  "workspaces": [
-    "theme"
-  ]
+  }
 }
