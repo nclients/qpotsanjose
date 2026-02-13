@@ -115,7 +115,7 @@ sections:
       - "Special Offers"
     titleColor: "#000000"
     description: 
-      - "The perfect place to unwind and celebrate."
+      - "The perfect place to unwind and celebrate"
     descriptionColor: "#333333"
     folderPath: "gallery5"
     showImgName: false # true | false
