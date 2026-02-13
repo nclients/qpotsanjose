@@ -104,6 +104,25 @@ sections:
     bottomRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
     # bottomInfo: "We offer Takeout"
 
+# Gallery  
+  - type: "gallery"
+    id: ""
+    mode: 1 # 1 - 3
+    bgImg: ""
+    bgColor: ""
+    bgOpacity: "" # 0~1
+    title: 
+      - "Special Offers"
+    titleColor: "#000000"
+    description: 
+      - "The perfect place to unwind and celebrate."
+    descriptionColor: "#333333"
+    folderPath: "gallery5"
+    showImgName: false # true | false
+    imgNameColor: "#000000"
+    menuItemImgRounded: "3xl" # sm | md | lg | xl | 2xl | 3xl | full
+
+
 # Video
   - type: "video"
     id: ""
@@ -115,6 +134,7 @@ sections:
     videoId: 
       - "1iae6in3vch3QLZvE6g4Chfyj1151c"
     isOnlyDisplayOnMobile: false
+
 
 # Gallery  
   - type: "gallery"
