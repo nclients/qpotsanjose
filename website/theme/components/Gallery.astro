@@ -426,6 +426,8 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
   carousels.forEach((carousel) => {
     const mainImage = carousel.querySelector("[data-carousel-main-image]");
     const mainName = carousel.querySelector("[data-carousel-main-name]");
+    const thumbsContainer = carousel.querySelector("[data-carousel-thumbnails]");
+    const thumbsScroller = thumbsContainer?.parentElement;
     const thumbs = Array.from(carousel.querySelectorAll("[data-carousel-thumb]"));
     const intervalMs = Number(carousel.getAttribute("data-autoplay-interval")) || 3500;
 
@@ -455,6 +457,21 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
       if (nextSrc) mainImage.setAttribute("src", nextSrc);
       mainImage.setAttribute("alt", nextAlt);
       if (mainName) mainName.textContent = nextName;
+      if (
+        thumbsContainer &&
+        thumbsScroller instanceof HTMLElement &&
+        activeThumb instanceof HTMLElement
+      ) {
+        const targetLeft =
+          activeThumb.offsetLeft - (thumbsScroller.clientWidth - activeThumb.clientWidth) / 2;
+        const maxLeft = thumbsScroller.scrollWidth - thumbsScroller.clientWidth;
+        const nextLeft = Math.max(0, Math.min(targetLeft, Math.max(0, maxLeft)));
+
+        thumbsScroller.scrollTo({
+          left: nextLeft,
+          behavior: "smooth",
+        });
+      }
 
     };
 
