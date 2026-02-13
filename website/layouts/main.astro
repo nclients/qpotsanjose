@@ -425,6 +425,13 @@ const themeColor = content?.secondaryColor || "#ffffff";
     )}
         <!-- end of structured data -->
   </head>
+  <style is:global>
+    @media (max-width: 1023px) {
+      main section[id] {
+        scroll-margin-top: 140px;
+      }
+    }
+  </style>
   <body style={`background-color: ${themeColor};`}>
 
     <!-- Google Tag Manager (noscript) -->
