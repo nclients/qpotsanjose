@@ -574,8 +574,14 @@ function hexToRgb(hex:string) {
     }
   }
 
-  // Call the function after the iframe has loaded
-  document.getElementById("gjw-video")!.onload = function () {
+  const gjwVideo = document.getElementById("gjw-video") as HTMLIFrameElement | null;
+  if (gjwVideo) {
+    // Call the function after the iframe has loaded
+    gjwVideo.onload = function () {
+      muteGJWVideo();
+    };
+
+    // Try once immediately in case the load event already fired.
     muteGJWVideo();
-  };
+  }
 </script>
