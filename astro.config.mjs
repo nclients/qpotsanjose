@@ -1,9 +1,11 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(),mdx()],
-  srcDir: './website'
+  integrations: [tailwind(), react(), mdx()],
+  srcDir: "./website",
+  site: "https://ncclients.github.io",
+  base: "/qpotsanjose/",
 });
