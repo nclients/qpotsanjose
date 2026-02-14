@@ -6,6 +6,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
   srcDir: "./website",
-  site: "https://ncclients.github.io",
-  base: "/qpotsanjose/",
+  // site: "https://ncclients.github.io",
+  // base: "/qpotsanjose/",
 });
