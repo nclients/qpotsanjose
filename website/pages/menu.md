@@ -316,6 +316,8 @@ footer:
   address: 
     - address: "1610 E Capitol Expy, San Jose, CA 95121"
       url: "https://maps.app.goo.gl/bcwFsXPMDHKjP9yY7"
+    - address: "Email"
+    - address: "qpot.sanjose@gmail.com"
     # - address: "address2"
     #   url: "https://..."
  

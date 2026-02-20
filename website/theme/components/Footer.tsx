@@ -226,20 +226,30 @@ export default function Footer(props: { content: any; }){
             </span>
           </div>
           {content?.footer?.address?.map(
-            (item: { url: string; address: string }, index: number) => (
-              <div key={index}>
-              
-                  <a
-                    target="_blank"
-                    aria-label={`Open the ${item?.address} in a new tab`}
-                    href={item?.url}
-                    
-                  >
-                    {item?.address}
-                  </a>
-              
-              </div>
-            )
+            (item: { url: string; address: string }, index: number) => {
+              const isEmailAddress = item?.address?.includes("@");
+              const href = item?.url || (isEmailAddress ? `mailto:${item.address}` : "");
+
+              return (
+                <div key={index} className={item?.address === "Email" ? "mt-2" : ""}>
+                  {href ? (
+                    <a
+                      target={href.startsWith("mailto:") ? undefined : "_blank"}
+                      aria-label={
+                        href.startsWith("mailto:")
+                          ? `Send an email to ${item?.address}`
+                          : `Open the ${item?.address} in a new tab`
+                      }
+                      href={href}
+                    >
+                      {item?.address}
+                    </a>
+                  ) : (
+                    <span>{item?.address}</span>
+                  )}
+                </div>
+              );
+            }
           )}{" "}
         </div>
       ) : null
