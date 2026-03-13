@@ -376,10 +376,9 @@ footer:
 
   openingHoursInsteadText: ""
   openingHours: 
-    - "Monday ～ Thursday & Sunday"
-    - "11:00 AM - 11:00 PM"
-    - "Friday ～ Saturday"
-    - "11:00 AM - 11:00 PM"
+    - "Monday ～ Saturday"
+    - "11:00 AM - 10:00 PM"
+
  
   addressInsteadText: "Address"
   address: 
