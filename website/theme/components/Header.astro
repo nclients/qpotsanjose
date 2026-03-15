@@ -5,6 +5,25 @@ import OrderOnlineBtn from "./ui/OrderOnlineBtn.astro";
 import { cn } from "../utils/cn";
 
 const { content } = Astro.props;
+type BannerOffer = {
+  title?: string;
+  text?: string;
+  note?: string;
+};
+
+type LegacyBannerItem = {
+  boldText?: string;
+  text?: string;
+  smText?: string;
+};
+
+const bannerOffers: BannerOffer[] =
+  content?.banner?.offers ??
+  (content?.banner?.text ?? []).map((item: LegacyBannerItem) => ({
+    title: item?.boldText,
+    text: item?.text,
+    note: item?.smText,
+  }));
 ---
 
 <header id="header" class="relative shadow-lg z-50">
@@ -14,44 +33,47 @@ const { content } = Astro.props;
       content?.banner ? (
         <div
           id="headBanner"
-          class="z-[9999999999] relative isolate flex items-center gap-x-6 overflow-hidden px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
+          class="z-[9999999999] relative isolate overflow-hidden py-2.5"
           style={`background-color: ${content?.primaryColor};`}
         >
-          <div
-            style={`color:${content.primaryColorScheme === "dark" ? "#ffffff" : "#000000"}`}
-          >
-            {content?.banner?.text?.map(
-              (item: { boldText: string; text: string; smText: string }) => {
-                return (
-                  <span>
-                    {item?.boldText && (
-                      <span class="font-semibold">{item.boldText}</span>
-                    )}
-                    {item?.text && <span class="text-sm">{item.text}</span>}
-                    {item?.smText && <span class="text-xs">{item.smText}</span>}
-                  </span>
-                );
-              }
-            )}
-          </div>
-          <div id="bannerCloseIcon" class="flex flex-1 justify-end">
-            <button
-              type="button"
-              class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-              aria-label="Close banner"
+          <div class="banner-shell mx-auto flex w-full items-center">
+            <div
+              class="banner-marquee flex-1 text-xs leading-5 sm:text-sm"
+              style={`color:${content.primaryColorScheme === "dark" ? "#ffffff" : "#000000"}; margin-left: 1cm;`}
             >
-              {/* <span class="sr-only">Dismiss</span> */}
-              <svg
-                class="h-5 w-5 text-gray-900"
-                viewBox="0 0 20 20"
-                fill={
-                  content.primaryColorScheme === "dark" ? "#ffffff" : "#000000"
-                }
-                aria-hidden="true"
+              <div class="banner-marquee__track">
+                {[...bannerOffers, ...bannerOffers].map(
+                  (item: BannerOffer, index: number) => {
+                    return (
+                      <span class="banner-marquee__item" aria-hidden={index >= bannerOffers.length}>
+                        {item?.title && <span class="font-semibold">{item.title}</span>}
+                        {item?.text && <span class="text-sm">{item.text}</span>}
+                        {item?.note && <span class="text-xs">{item.note}</span>}
+                      </span>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+            <div id="bannerCloseIcon" class="flex shrink-0 justify-end" style="padding-right: 0.2cm;">
+              <button
+                type="button"
+                class="p-2 focus-visible:outline-offset-[-4px]"
+                aria-label="Close banner"
               >
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </button>
+                {/* <span class="sr-only">Dismiss</span> */}
+                <svg
+                  class="h-5 w-5 text-gray-900"
+                  viewBox="0 0 20 20"
+                  fill={
+                    content.primaryColorScheme === "dark" ? "#ffffff" : "#000000"
+                  }
+                  aria-hidden="true"
+                >
+                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       ) : (
@@ -418,3 +440,47 @@ const { content } = Astro.props;
       document?.getElementById("headBanner")?.classList.add("hidden");
     });
 </script>
+
+<style>
+  .banner-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .banner-marquee__track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 4rem;
+    animation: banner-marquee-scroll 24s linear infinite;
+  }
+
+  .banner-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex: 0 0 auto;
+  }
+
+  @keyframes banner-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .banner-marquee {
+      font-size: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .banner-marquee__track {
+      animation: none;
+    }
+  }
+</style>

@@ -20,6 +20,7 @@ banner:
     - boldText: "🎉 Birthday Specials"
     - boldText: "• Parties of 5 or more: Birthday guest eats FREE"
     - text: "Parties of fewer than 5: Birthday guest gets 50% OFF"
+    - boldText: "• FREE ice cream: one per person with dinner purchase only"
     - smText: ""
   # add more text...
 
@@ -129,6 +130,7 @@ sections:
     titleColor: "#000000"
     description: 
       - "Fresh From Our Kitchen"
+      - "Free ice cream, one per person, with dinner purchase only."
     descriptionColor: "#333333"
     folderPath: "gallery4"
     showImgName: false # true | false

@@ -16,11 +16,11 @@ tableReservationLink: ""
 tel: "（669）235-9511"
 
 banner:
-  text: 
-    - boldText: "🎉 Birthday Specials"
-    - boldText: "• Parties of 5 or more: Birthday guest eats FREE"
-    - text: "Parties of fewer than 5: Birthday guest gets 50% OFF"
-    - smText: ""
+  offers:
+    - title: "🎂 Birthday Specials:"
+      text: "Parties of 5 or more: Birthday guest eats FREE. Parties of fewer than 5: Birthday guest gets 50% OFF. 🎂"
+    - title: "🍦 FREE ice cream:"
+      text: "One per person with dinner purchase only. 🍦"
   # add more text...
 
 # header
@@ -111,11 +111,12 @@ sections:
     bgImg: ""
     bgColor: ""
     bgOpacity: "" # 0~1
+    imagesMarginTop: "2.25rem"
     title: 
       - "Special Offers"
     titleColor: "#000000"
     description: 
-      - "The perfect place to unwind and celebrate"
+      - "Free ice cream, one per person, with dinner purchase only."
     descriptionColor: "#333333"
     folderPath: "gallery5"
     showImgName: false # true | false
