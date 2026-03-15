@@ -8,8 +8,12 @@ const highlightedOfferText =
   "Free ice cream, one per person, with dinner purchase only.";
 const getDescriptionClass = (info: string) =>
   info?.includes(highlightedOfferText)
-    ? "mt-5 inline-block rounded-full border-2 border-amber-300 bg-gradient-to-r from-amber-50 via-yellow-100 to-amber-50 px-5 py-3 text-center text-2xl font-bold leading-8 text-amber-900 shadow-[0_10px_25px_rgba(180,120,0,0.18)] sm:px-7 sm:py-4 sm:text-3xl sm:leading-10"
+    ? "mx-auto mt-3 w-full px-5 py-3 text-center text-[1.15rem] leading-[1.35] sm:mt-4 md:w-[calc(100%+4rem)] md:max-w-none md:-mx-8 md:whitespace-nowrap md:px-10 md:py-4 md:text-[1.5rem]"
     : "mt-4 text-lg leading-8 text-gray-600 text-center";
+const getDescriptionStyle = (info: string) =>
+  info?.includes(highlightedOfferText)
+    ? "display:block;box-sizing:border-box;border-radius:9999px;border:2px solid #d4a63b;background:linear-gradient(90deg,#fff3ea 0%,#ffe0a8 35%,#ffd36b 50%,#ffe0a8 65%,#fff3ea 100%);color:#8f1d1d;font-weight:700;box-shadow:0 10px 25px rgba(143,29,29,0.16);margin-left:auto;margin-right:auto;"
+    : "";
 ---
 
 <section
@@ -31,7 +35,7 @@ const getDescriptionClass = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)}>
+                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -101,7 +105,7 @@ const getDescriptionClass = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)}>
+                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -166,7 +170,7 @@ const getDescriptionClass = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)}>
+                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -229,7 +233,7 @@ const getDescriptionClass = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)}>
+                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -292,7 +296,7 @@ const getDescriptionClass = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)}>
+                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
                   {info}
                 </p>
               </Fragment>
