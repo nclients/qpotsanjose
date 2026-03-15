@@ -4,6 +4,12 @@ import { cn } from "../utils/cn";
 
 const { section } = Astro.props;
 const images = getImagesFromFolders("/public/" + section?.folderPath);
+const highlightedOfferText =
+  "Free ice cream, one per person, with dinner purchase only.";
+const getDescriptionClass = (info: string) =>
+  info?.includes(highlightedOfferText)
+    ? "mt-5 inline-block rounded-full border-2 border-amber-300 bg-gradient-to-r from-amber-50 via-yellow-100 to-amber-50 px-5 py-3 text-center text-2xl font-bold leading-8 text-amber-900 shadow-[0_10px_25px_rgba(180,120,0,0.18)] sm:px-7 sm:py-4 sm:text-3xl sm:leading-10"
+    : "mt-4 text-lg leading-8 text-gray-600 text-center";
 ---
 
 <section
@@ -25,7 +31,7 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class="mt-4 text-lg leading-8 text-gray-600 text-center">
+                <p class={getDescriptionClass(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -95,7 +101,7 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class="mt-4 text-lg leading-8 text-gray-600 text-center">
+                <p class={getDescriptionClass(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -160,7 +166,7 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class="mt-4 text-lg leading-8 text-gray-600 text-center">
+                <p class={getDescriptionClass(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -223,7 +229,7 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class="mt-4 text-lg leading-8 text-gray-600 text-center">
+                <p class={getDescriptionClass(info)}>
                   {info}
                 </p>
               </Fragment>
@@ -286,7 +292,7 @@ const images = getImagesFromFolders("/public/" + section?.folderPath);
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class="mt-4 text-lg leading-8 text-gray-600 text-center">
+                <p class={getDescriptionClass(info)}>
                   {info}
                 </p>
               </Fragment>
