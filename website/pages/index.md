@@ -377,7 +377,11 @@ footer:
 
   openingHoursInsteadText: ""
   openingHours: 
-    - "Monday ～ Saturday"
+    - "Monday ～ Thursday"
+    - "11:00 AM - 10:00 PM"
+    - "Friday ～ Saturday"
+    - "11:00 AM - 11:00 PM"
+    - "Sunday"
     - "11:00 AM - 10:00 PM"
 
  
@@ -446,12 +450,15 @@ seo:
     - "Korean"
   paymentAccepted: "Visa, Mastercard, American Express, Apple Pay, Alipay"
   openingHours:
-    - dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"]
+    - dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"]
       opens: "11:00"
-      closes: "23:00"
+      closes: "22:00"
     - dayOfWeek: ["Friday", "Saturday"]
       opens: "11:00"
       closes: "23:00"
+    - dayOfWeek: "Sunday"
+      opens: "11:00"
+      closes: "22:00"
 
 # Do not change the content below
 layout: ../layouts/main.astro
