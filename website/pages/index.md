@@ -17,6 +17,8 @@ tel: "（669）235-9511"
 
 banner:
   offers:
+    - title: "🔥 Lunch Special:"
+      text: "BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM | Excludes holidays"
     - title: "🎂 Birthday Specials:"
       text: "Parties of 5 or more: Birthday guest eats FREE. Parties of fewer than 5: Birthday guest gets 50% OFF. 🎂"
     - title: "🍦 FREE ice cream:"
@@ -116,6 +118,7 @@ sections:
       - "Special Offers"
     titleColor: "#000000"
     description: 
+      - "Lunch Special: BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM. Excludes holidays."
       - "Free ice cream, one per person, with dinner purchase only."
     descriptionColor: "#333333"
     folderPath: "gallery5"

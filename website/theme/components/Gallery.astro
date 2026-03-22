@@ -4,16 +4,33 @@ import { cn } from "../utils/cn";
 
 const { section } = Astro.props;
 const images = getImagesFromFolders("/public/" + section?.folderPath);
-const highlightedOfferText =
-  "Free ice cream, one per person, with dinner purchase only.";
+const highlightedOfferTexts = [
+  "Lunch Special: BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM. Excludes holidays.",
+  "Free ice cream, one per person, with dinner purchase only.",
+];
+const isHighlightedOffer = (info: string) =>
+  highlightedOfferTexts.some((text) => info?.includes(text));
+const splitLunchOffer = (info: string) => {
+  if (!info?.includes("Lunch Special:")) return null;
+
+  const [headline, details] = info.split("|").map((part) => part.trim());
+  return { headline, details };
+};
 const getDescriptionClass = (info: string) =>
-  info?.includes(highlightedOfferText)
-    ? "mx-auto mt-3 w-full px-5 py-3 text-center text-[1.15rem] leading-[1.35] sm:mt-4 md:w-[calc(100%+4rem)] md:max-w-none md:-mx-8 md:whitespace-nowrap md:px-10 md:py-4 md:text-[1.5rem]"
+  isHighlightedOffer(info)
+    ? "mx-auto mt-3 w-full px-5 py-3 text-center text-[1.05rem] leading-[1.35] sm:mt-4 md:w-[calc(100%+4rem)] md:max-w-none md:-mx-8 md:px-10 md:py-4 md:text-[1.35rem]"
     : "mt-4 text-lg leading-8 text-gray-600 text-center";
-const getDescriptionStyle = (info: string) =>
-  info?.includes(highlightedOfferText)
-    ? "display:block;box-sizing:border-box;border-radius:9999px;border:2px solid #d4a63b;background:linear-gradient(90deg,#fff3ea 0%,#ffe0a8 35%,#ffd36b 50%,#ffe0a8 65%,#fff3ea 100%);color:#8f1d1d;font-weight:700;box-shadow:0 10px 25px rgba(143,29,29,0.16);margin-left:auto;margin-right:auto;"
-    : "";
+const getDescriptionStyle = (info: string) => {
+  if (info?.includes("Lunch Special:")) {
+    return "display:block;box-sizing:border-box;border-radius:24px;border:2px solid #8f1d1d;background:linear-gradient(135deg,#fff8ef 0%,#ffe3b3 45%,#ffd170 100%);color:#7f1111;font-weight:800;box-shadow:0 16px 35px rgba(143,29,29,0.18);margin-left:auto;margin-right:auto;";
+  }
+
+  if (info?.includes("Free ice cream")) {
+    return "display:block;box-sizing:border-box;border-radius:9999px;border:2px solid #d4a63b;background:linear-gradient(90deg,#fff3ea 0%,#ffe0a8 35%,#ffd36b 50%,#ffe0a8 65%,#fff3ea 100%);color:#8f1d1d;font-weight:700;box-shadow:0 10px 25px rgba(143,29,29,0.16);margin-left:auto;margin-right:auto;";
+  }
+
+  return "";
+};
 ---
 
 <section
@@ -35,9 +52,20 @@ const getDescriptionStyle = (info: string) =>
 
             {section?.description?.map((info: string, index: number) => (
               <Fragment key={index}>
-                <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
-                  {info}
-                </p>
+                {splitLunchOffer(info) ? (
+                  <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
+                    <span class="block text-[1.15em] font-extrabold tracking-[0.01em]">
+                      {splitLunchOffer(info)?.headline}
+                    </span>
+                    <span class="mt-1 block text-[0.82em] font-semibold opacity-85 sm:text-[0.86em]">
+                      {splitLunchOffer(info)?.details}
+                    </span>
+                  </p>
+                ) : (
+                  <p class={getDescriptionClass(info)} style={getDescriptionStyle(info)}>
+                    {info}
+                  </p>
+                )}
               </Fragment>
             ))}
           </div>
