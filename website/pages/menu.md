@@ -16,12 +16,13 @@ tableReservationLink: ""
 tel: "（669）235-9511"
 
 banner:
-  text: 
-    - boldText: "🎉 Birthday Specials"
-    - boldText: "• Parties of 5 or more: Birthday guest eats FREE"
-    - text: "Parties of fewer than 5: Birthday guest gets 50% OFF"
-    - boldText: "• FREE ice cream: one per person with dinner purchase only"
-    - smText: ""
+  offers:
+    - title: "🔥 Lunch Special:"
+      text: "BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM | Excludes holidays"
+    - title: "🎂 Birthday Specials:"
+      text: "Parties of 5 or more: Birthday guest eats FREE. Parties of fewer than 5: Birthday guest gets 50% OFF. 🎂"
+    - title: "🍦 FREE ice cream:"
+      text: "One per person with dinner purchase only. 🍦"
   # add more text...
 
 # header
@@ -130,6 +131,7 @@ sections:
     titleColor: "#000000"
     description: 
       - "Fresh From Our Kitchen"
+      - "Lunch Special: BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM. Excludes holidays."
       - "Free ice cream, one per person, with dinner purchase only."
     descriptionColor: "#333333"
     folderPath: "gallery4"
