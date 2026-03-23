@@ -616,7 +616,8 @@ const getDescriptionStyle = (info: string) => {
     mainImage.addEventListener(
       "touchstart",
       (event) => {
-        touchStartX = event.changedTouches[0]?.clientX || 0;
+        const touchEvent = event as TouchEvent;
+        touchStartX = touchEvent.changedTouches[0]?.clientX || 0;
       },
       { passive: true }
     );
@@ -624,7 +625,8 @@ const getDescriptionStyle = (info: string) => {
     mainImage.addEventListener(
       "touchend",
       (event) => {
-        touchEndX = event.changedTouches[0]?.clientX || 0;
+        const touchEvent = event as TouchEvent;
+        touchEndX = touchEvent.changedTouches[0]?.clientX || 0;
         handleSwipe();
       },
       { passive: true }
