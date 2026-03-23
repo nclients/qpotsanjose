@@ -80,9 +80,51 @@ const getDescriptionStyle = (info: string) => {
 
           <div
             class={cn(
+              "mx-auto mt-8 max-w-md md:hidden",
+              isHomepageSpecialOffers ? "" : "hidden"
+            )}
+            data-gallery-carousel
+            data-autoplay-interval="4000"
+          >
+            {images?.length ? (
+              <>
+                <div class="rounded-[2rem] bg-[#fbf4e8] p-3 shadow-[0_18px_45px_rgba(92,33,18,0.12)] sm:p-4">
+                  <img
+                    src={images[0]?.src?.replace("/public", "")}
+                    alt={images[0]?.name}
+                    class="w-full min-h-[260px] rounded-[1.5rem] object-cover"
+                    data-carousel-main-image
+                    loading="eager"
+                  />
+                </div>
+
+                <div class="mt-4 flex justify-center gap-2" data-carousel-dots>
+                  {images?.map((item, index) => (
+                    <button
+                      type="button"
+                      class={cn(
+                        "h-2.5 w-2.5 rounded-full transition",
+                        index === 0 ? "bg-gray-900" : "bg-gray-300"
+                      )}
+                      data-carousel-thumb
+                      data-index={index}
+                      data-src={item?.src?.replace("/public", "")}
+                      data-alt={item?.name}
+                      aria-label={`Show image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p class="text-center text-gray-500">No images found.</p>
+            )}
+          </div>
+
+          <div
+            class={cn(
               "mx-auto grid auto-rows-fr grid-cols-1 text-center",
               isHomepageSpecialOffers
-                ? "max-w-6xl gap-8 md:grid-cols-2 md:items-stretch md:gap-10 lg:gap-12"
+                ? "hidden max-w-6xl gap-8 md:grid md:grid-cols-2 md:items-stretch md:gap-10 lg:gap-12"
                 : "max-w-2xl gap-16 lg:mx-0 lg:max-w-none"
             )}
             style={`margin-top: ${section?.imagesMarginTop ?? "4rem"};`}
@@ -512,11 +554,11 @@ const getDescriptionStyle = (info: string) => {
 
       thumbs.forEach((thumb, index) => {
         if (index === activeIndex) {
-          thumb.classList.add("border-gray-900");
-          thumb.classList.remove("border-transparent", "hover:border-gray-400");
+          thumb.classList.add("border-gray-900", "bg-gray-900");
+          thumb.classList.remove("border-transparent", "hover:border-gray-400", "bg-gray-300");
         } else {
-          thumb.classList.remove("border-gray-900");
-          thumb.classList.add("border-transparent", "hover:border-gray-400");
+          thumb.classList.remove("border-gray-900", "bg-gray-900");
+          thumb.classList.add("border-transparent", "hover:border-gray-400", "bg-gray-300");
         }
       });
 
@@ -561,6 +603,32 @@ const getDescriptionStyle = (info: string) => {
         setActive(index);
       });
     });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const handleSwipe = () => {
+      const deltaX = touchEndX - touchStartX;
+      if (Math.abs(deltaX) < 40) return;
+      setActive(deltaX < 0 ? activeIndex + 1 : activeIndex - 1);
+    };
+
+    mainImage.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX || 0;
+      },
+      { passive: true }
+    );
+
+    mainImage.addEventListener(
+      "touchend",
+      (event) => {
+        touchEndX = event.changedTouches[0]?.clientX || 0;
+        handleSwipe();
+      },
+      { passive: true }
+    );
 
     carousel.addEventListener("mouseenter", stop);
     carousel.addEventListener("mouseleave", start);
