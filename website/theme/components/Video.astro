@@ -7,7 +7,7 @@ const { content, section } = Astro.props;
 <section
   id={`${section?.id || ""}`}
   class={cn(
-    "px-6 scroll-mt-100 sm:scroll-mt-150",
+    "px-3 scroll-mt-100 sm:px-6 sm:scroll-mt-150",
     section?.noMarginTop ? "pt-0" : "pt-16 sm:pt-24 md:pt-32",
     section?.bgImg ? "py-8 sm:py-16 lg:py-24" : "",
     section?.isOnlyDisplayOnMobile ? "block sm:hidden" : ""
@@ -50,7 +50,7 @@ const { content, section } = Astro.props;
     style={`background-color:${section?.bgColor}; opacity: ${section?.bgOpacity}`}
   ></span>
   <div
-    class={`m-auto max-w-2xl md:max-w-7xl grid grid-cols-1 sm:grid-cols-${section?.isOnlyDisplayOnMobile ? 1 : section?.videoId?.length} md:gap-8 lg:gap-16 gap-4`}
+    class={`m-auto w-full max-w-2xl grid grid-cols-1 gap-4 sm:grid-cols-${section?.isOnlyDisplayOnMobile ? 1 : section?.videoId?.length} md:max-w-7xl md:gap-8 lg:gap-16`}
   >
     {
       section?.videoType === "vimeo"

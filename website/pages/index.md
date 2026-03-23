@@ -118,7 +118,6 @@ sections:
       - "Special Offers"
     titleColor: "#000000"
     description: 
-      - "Lunch Special: BBQ & Hot Pot — both $25 | Monday-Friday, 11AM-3PM. Excludes holidays."
       - "Free ice cream, one per person, with dinner purchase only."
     descriptionColor: "#333333"
     folderPath: "gallery5"
