@@ -10,7 +10,7 @@ const isHomepageSpecialOffers =
   section?.title?.includes("Special Offers");
 const orderedImages = isHomepageSpecialOffers
   ? [...images].sort((a, b) => {
-      const sortOrder = ["special1", "special3", "special2"];
+      const sortOrder = ["special1", "special3", "special2", "special4"];
       const aIndex = sortOrder.indexOf(a?.name?.toLowerCase());
       const bIndex = sortOrder.indexOf(b?.name?.toLowerCase());
 
