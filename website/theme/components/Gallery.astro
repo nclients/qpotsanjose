@@ -92,41 +92,27 @@ const getDescriptionStyle = (info: string) => {
 
           <div
             class={cn(
-              "mx-auto mt-8 max-w-md md:hidden",
-              isHomepageSpecialOffers ? "" : "hidden"
+              "mx-auto mt-8 md:hidden",
+              isHomepageSpecialOffers ? "max-w-6xl" : "hidden"
             )}
-            data-gallery-carousel
-            data-autoplay-interval="4000"
           >
             {orderedImages?.length ? (
-              <>
-                <div class="rounded-[2rem] bg-[#fbf4e8] p-3 shadow-[0_18px_45px_rgba(92,33,18,0.12)] sm:p-4">
-                  <img
-                    src={orderedImages[0]?.src?.replace("/public", "")}
-                    alt={orderedImages[0]?.name}
-                    class="w-full min-h-[260px] rounded-[1.5rem] object-cover"
-                    data-carousel-main-image
-                    loading="eager"
-                  />
-                </div>
-
-                <div class="mt-4 flex justify-center gap-2" data-carousel-dots>
+              <div class="overflow-x-auto pb-3">
+                <div class="flex min-w-max gap-4">
                   {orderedImages?.map((item, index) => (
-                    <button
-                      type="button"
-                      class={cn(
-                        "h-2.5 w-2.5 rounded-full transition",
-                        index === 0 ? "bg-gray-900" : "bg-gray-300"
-                      )}
-                      data-carousel-thumb
-                      data-index={index}
-                      data-src={item?.src?.replace("/public", "")}
-                      data-alt={item?.name}
-                      aria-label={`Show image ${index + 1}`}
-                    />
+                    <div class="flex w-[78vw] max-w-[280px] shrink-0" key={index}>
+                      <div class="relative isolate flex h-full w-full flex-col justify-center overflow-hidden rounded-[2rem] bg-[#fbf4e8] p-3 shadow-[0_18px_45px_rgba(92,33,18,0.12)]">
+                        <img
+                          src={item?.src?.replace("/public", "")}
+                          alt={item?.name}
+                          class="h-full min-h-[260px] w-full rounded-[1.5rem] object-cover"
+                          loading={index === 0 ? "eager" : "lazy"}
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </>
+              </div>
             ) : (
               <p class="text-center text-gray-500">No images found.</p>
             )}
@@ -136,7 +122,7 @@ const getDescriptionStyle = (info: string) => {
             class={cn(
               "mx-auto grid auto-rows-fr grid-cols-1 text-center",
               isHomepageSpecialOffers
-                ? "hidden max-w-6xl gap-8 md:grid md:grid-cols-3 md:items-stretch md:gap-8 lg:gap-10"
+                ? "hidden max-w-6xl gap-8 md:grid md:grid-cols-4 md:items-stretch md:gap-6 lg:gap-8"
                 : "max-w-2xl gap-16 lg:mx-0 lg:max-w-none"
             )}
             style={`margin-top: ${section?.imagesMarginTop ?? "4rem"};`}
