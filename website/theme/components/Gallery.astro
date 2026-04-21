@@ -100,16 +100,18 @@ const getDescriptionStyle = (info: string) => {
               <div class="overflow-x-auto pb-3">
                 <div class="flex min-w-max gap-4">
                   {orderedImages?.map((item, index) => (
-                    <div class="flex w-[78vw] max-w-[280px] shrink-0" key={index}>
-                      <div class="relative isolate flex h-full w-full flex-col justify-center overflow-hidden rounded-[2rem] bg-[#fbf4e8] p-3 shadow-[0_18px_45px_rgba(92,33,18,0.12)]">
-                        <img
-                          src={item?.src?.replace("/public", "")}
-                          alt={item?.name}
-                          class="h-full min-h-[260px] w-full rounded-[1.5rem] object-cover"
-                          loading={index === 0 ? "eager" : "lazy"}
-                        />
+                    <Fragment key={index}>
+                      <div class="flex w-[78vw] max-w-[280px] shrink-0">
+                        <div class="relative isolate flex h-full w-full flex-col justify-center overflow-hidden rounded-[2rem] bg-[#fbf4e8] p-3 shadow-[0_18px_45px_rgba(92,33,18,0.12)]">
+                          <img
+                            src={item?.src?.replace("/public", "")}
+                            alt={item?.name}
+                            class="h-full min-h-[260px] w-full rounded-[1.5rem] object-cover"
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </Fragment>
                   ))}
                 </div>
               </div>
