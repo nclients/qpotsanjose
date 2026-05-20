@@ -13,7 +13,7 @@ cuid: ""
 ruid: ""
 orderOnlineLink: ""
 tableReservationLink: ""
-tel: "（669）235-9511"
+tel: "(669) 234-3095"
 address: 1610 E Capitol Expy, San Jose, CA 95121
 creationDate: 10 Feb 2026
 

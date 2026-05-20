@@ -13,7 +13,7 @@ cuid: ""
 ruid: ""
 orderOnlineLink: ""
 tableReservationLink: ""
-tel: "（669）235-9511"
+tel: "(669) 234-3095"
 
 banner:
   offers:
@@ -274,7 +274,7 @@ sections:
 #     url: "https://maps.app.goo.gl/bcwFsXPMDHKjP9yY7"
 #     iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.5496657845288!2d-121.81461662435163!3d37.305805572107346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e32801309e837%3A0xa4283b7a6d090e5f!2sQ%20Pot%20Korean%20BBQ%20%26%20Hotpot!5e0!3m2!1sen!2sus!4v1770696768961!5m2!1sen!2sus"
 #     addTelBtn: true
-#     tel: "（669）235-9511"
+#     tel: "(669) 234-3095"
 #     telInsteadText: ""
 #     tel2: "" # if there are two phone numbers
 #     tel2InsteadText: ""
