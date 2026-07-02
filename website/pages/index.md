@@ -42,9 +42,9 @@ header:
   menu:
     - { text: "Home", link: "/" }
     - { text: "Menu", link: "/menu" }
-    - { text: "Gallery", link: "#gallery" }
-    - { text: "About Us", link: "#about-us" }
-    - { text: "Contact Us", link: "#contact-us" }
+    - { text: "Gallery", link: "/#gallery" }
+    - { text: "About Us", link: "/#about-us" }
+    - { text: "Contact Us", link: "/#contact-us" }
 
   addOrderOnlineBtn: false
   orderOnlineBtnInsteadText: ""
@@ -366,6 +366,7 @@ sections:
 #     buttonText: ""
 
 footer:
+  cookie: true
   mode: 1 # 1
   noMarginTop: true
   bgImg: "banner.webp"
