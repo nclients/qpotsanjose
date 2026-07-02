@@ -4,7 +4,7 @@ tag: "GTM-PG5QM8B4" #GTM-xxx
 googleSiteVerification: "" 
 title: "Q-POT Korean BBQ & Hot Pot"
 favicon: "favicon.ico"
-logo: "logo.png"
+logo: "logo.webp"
 primaryColor: "#E7383D" # logo color
 secondaryColor: "#EFEDE8"
 primaryColorScheme: "light" # dark | light
@@ -34,7 +34,7 @@ header:
     size: 16
     color: ""
   showTextAfterLogoOnMobile: false
-  logoOnMobile: "" # e.g., 'logo.png'. Set a logo for mobile that is different from the desktop.
+  logoOnMobile: "" # e.g., 'logo.webp'. Set a logo for mobile that is different from the desktop.
   
   bgColor: "#000000"
   bgOpacity: "0.8" # 0~1
@@ -434,7 +434,7 @@ seo:
   name: "Q-POT Korean BBQ & Hot Pot"
   images:
     - "https://www.qpotsanjose.com/banner.webp"
-    - "https://www.qpotsanjose.com/logo.png"
+    - "https://www.qpotsanjose.com/logo.webp"
   address:
     streetAddress: "1610 E Capitol Expy"
     addressLocality: "San Jose"
