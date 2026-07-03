@@ -129,3 +129,38 @@ seo:
 # Do not change the content below
 layout: ../layouts/main.astro
 ---
+
+<div class="bg-white py-12">
+  <div class="mx-auto max-w-6xl lg:px-8">
+    <div class="bg-white px-6 py-16 sm:py-32 lg:px-8">
+      <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+        <h1 class="mt-2 text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">Cookie Policy</h1>
+        <p class="mt-6">This Cookie Policy explains how Q-POT Korean BBQ &amp; Hot Pot ("we," "us," or "our") uses cookies and similar technologies on our website. It should be read together with our Privacy Policy.</p>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">What Are Cookies?</h2>
+        <p class="mt-6">Cookies are small text files that are placed on your device (computer, tablet, or mobile) when you visit a website. They are widely used to make websites work, to improve their efficiency, and to provide reporting information to site owners.</p>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">How We Use Cookies</h2>
+        <p class="mt-6">We use cookies to understand how visitors interact with our website so that we can improve your experience. The cookies we use fall into the following categories:</p>
+        <ul class="mt-6 list-disc space-y-2 pl-6">
+          <li><strong>Strictly Necessary Cookies.</strong> These are essential for the website to function properly and cannot be switched off in our systems.</li>
+          <li><strong>Analytics &amp; Performance Cookies.</strong> We use Google Tag Manager and Google Analytics to collect information about how visitors use our site, such as which pages are visited most often. This data is aggregated and helps us measure and improve site performance.</li>
+          <li><strong>Functional Cookies.</strong> These enable enhanced functionality and personalization, such as remembering your preferences.</li>
+        </ul>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">Third-Party Cookies</h2>
+        <p class="mt-6">Some cookies are placed by third-party services that appear on our pages, including Google. These providers may use cookies to collect information about your online activities across websites over time. We do not control the use of these third-party cookies.</p>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">Managing Your Cookie Preferences</h2>
+        <p class="mt-6">You can control and manage cookies in various ways. Most web browsers allow you to refuse or accept cookies, delete existing cookies, and set preferences for certain websites through their settings. Please note that if you disable cookies, some features of our website may not function correctly.</p>
+        <p class="mt-6">For more information on how to manage cookies, please refer to your browser's help documentation.</p>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">Changes to This Cookie Policy</h2>
+        <p class="mt-6">We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our operations. Any changes will be posted on this page with an updated revision date.</p>
+
+        <h2 class="mt-10 text-2xl font-bold text-gray-900">Contact Us</h2>
+        <p class="mt-6">If you have any questions about our use of cookies, please contact us at <a class="text-blue-600 underline" href="mailto:qpot.sanjose@gmail.com">qpot.sanjose@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
